@@ -1,0 +1,23 @@
+table_create Actors TABLE_HASH_KEY UInt32
+column_create Actors login COLUMN_SCALAR ShortText
+column_create Actors url COLUMN_SCALAR ShortText
+column_create Actors avatar_url COLUMN_SCALAR ShortText
+column_create Actors gravatar_id COLUMN_SCALAR ShortText
+
+table_create Repositories TABLE_HASH_KEY UInt64
+column_create Repositories name COLUMN_SCALAR ShortText
+column_create Repositories url COLUMN_SCALAR ShortText
+
+table_create Organizations TABLE_HASH_KEY UInt32
+column_create Organizations login COLUMN_SCALAR ShortText
+column_create Organizations url COLUMN_SCALAR ShortText
+column_create Organizations avatar_url COLUMN_SCALAR ShortText
+column_create Organizations gravatar_id COLUMN_SCALAR ShortText
+
+table_create Types TABLE_HASH_KEY ShortText
+
+table_create Logs TABLE_PAT_KEY ShortText
+column_create Logs type COLUMN_SCALAR Types
+column_create Logs public COLUMN_SCALAR Bool
+column_create Logs created_at COLUMN_SCALAR Time
+column_create Logs payload COLUMN_SCALAR Text
